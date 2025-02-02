@@ -331,7 +331,7 @@ export default function AdminDashboard() {
       setIsEditModalOpen(false);
     } catch (error) {
       console.error('Error updating car:', error);
-      setError(error.message);
+      setError(error instanceof Error ? error.message : 'An error occurred while updating the car');
     }
   };
 
