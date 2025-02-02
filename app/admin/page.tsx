@@ -308,7 +308,7 @@ export default function AdminDashboard() {
       setIsDeleteModalOpen(false);
     } catch (error) {
       console.error('Error deleting car:', error);
-      setError(error.message);
+      setError(error instanceof Error ? error.message : 'An error occurred while deleting the car');
     }
   };
 
