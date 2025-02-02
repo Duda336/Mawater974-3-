@@ -6,19 +6,7 @@ import { supabase } from '../../lib/supabase';
 import CarCard from '../../components/CarCard';
 import { FunnelIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../../contexts/AuthContext';
-import { Car, Brand } from '../../types/supabase';
-
-interface ExtendedCar extends Omit<Car, 'brand_id' | 'model_id'> {
-  brand: Brand;
-  model: {
-    id: number;
-    name: string;
-  };
-  images: {
-    id: number;
-    url: string;
-  }[];
-}
+import { Car, Brand, ExtendedCar } from '../../types/supabase';
 
 interface Filters {
   brand_id?: number;

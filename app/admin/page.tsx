@@ -304,7 +304,7 @@ export default function AdminDashboard() {
 
       if (error) throw error;
 
-      setCars(cars.filter(car => car.id !== Number(carId)));
+      setCars(cars.filter(car => car.id !== carId));
       setIsDeleteModalOpen(false);
     } catch (error) {
       console.error('Error deleting car:', error);
@@ -331,7 +331,7 @@ export default function AdminDashboard() {
       setIsEditModalOpen(false);
     } catch (error) {
       console.error('Error updating car:', error);
-      setError(error instanceof Error ? error.message : 'An error occurred while updating the car');
+      setError(error.message);
     }
   };
 

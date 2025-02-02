@@ -37,9 +37,9 @@ export default function LoginPage() {
       }
       
       router.push('/');
-    } catch (error: any) {
+    } catch (error) {
       console.error('Login error:', error);
-      setError(error.message || 'Failed to sign in');
+      setError(error instanceof Error ? error.message : 'Failed to sign in');
     }
   };
 

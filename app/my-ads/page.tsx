@@ -64,7 +64,7 @@ export default function MyAdsPage() {
       setCars(data || []);
     } catch (error) {
       console.error('Error fetching user cars:', error);
-      toast.error('Failed to load your car listings');
+      toast.error(error instanceof Error ? error.message : 'Failed to fetch your cars');
     } finally {
       setLoading(false);
     }
